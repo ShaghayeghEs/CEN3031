@@ -1,33 +1,369 @@
+<!-- First Task - write simple HTML for your Todo -->
+
+<!-- <!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+  </head>
+
+  <body>
+    <h2>Todo1</h2>
+    <div>
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li>
+            <input type="checkbox">
+            <span>Some Task 1</span>
+        </li>
+        <li>
+            <input type="checkbox">
+            <span>Some Task 2</span>
+        </li>
+      </ul>
+      <form>
+        <input type="text" size="30" placeholder="add new todo here">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- First Task - ends Here -->
+
+
+
+
+
+
+
+<!-- Second Task - create a list of tasks in Javascript and replace
+   "Some tasks" those from the list into your html using Javascript -->
+
+<!-- 
 <!doctype html>
 <html ng-app="todoApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="ToDo.js"></script>
-    
-	<style>
-	.done-true {
-  text-decoration: line-through;
-  color: grey;}
-  </style>
   </head>
-  <body>
-    <h2>Todo</h2>
+
+  <body >
+    <h2>Todo1</h2>
     <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </label>
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li>
+            <input type="checkbox">
+            <span>{{todoList.x[0]}}</span>
+        </li>
+        <li>
+            <input type="checkbox">
+            <span>{{todoList.x[1]}}</span>
         </li>
       </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
+      <form>
+        <input type="text" size="30" placeholder="add new todo here">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> 
+-->
+
+<!-- Second Task - ends Here -->
+
+
+
+
+
+
+
+<!-- Third Task - Now replace your list of tasks in Javascript with a data
+   structure that maintains whether you did a task or not -->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li>
+            <input type="checkbox">
+            <span>{{todoList.taskAndStatus[0].text}}</span>
+        </li>
+        <li>
+            <input type="checkbox">
+            <span>{{todoList.taskAndStatus[1].text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input type="text" size="30" placeholder="add new todo here">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Third Task - ends Here -->
+
+
+
+
+
+
+
+<!-- Fourth Task - Bind the checkboxes to the data structure you created -->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li>
+            <input type="checkbox" ng-model="todoList.taskAndStatus[0].done">
+            <span>{{todoList.taskAndStatus[0].text}}</span>
+        </li>
+        <li>
+            <input type="checkbox" ng-model="todoList.taskAndStatus[1].done">
+            <span>{{todoList.taskAndStatus[1].text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input type="text" size="30" placeholder="add new todo here">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Fourth Task - ends Here -->
+
+
+
+
+
+
+<!-- Fifth Task - Remove the redundancy in your code using ng-repeat 
+"the For loop" -->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li ng-repeat="eachTask in todoList.taskAndStatus">
+            <input type="checkbox" ng-model="eachTask.done">
+            <span>{{eachTask.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input type="text" size="30" placeholder="add new todo here">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Fifth Task - ends Here -->
+
+
+
+
+
+
+
+
+<!-- Sixth Task -  Add a task to your list when you click the add button-->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li ng-repeat="eachTask in todoList.taskAndStatus">
+            <input type="checkbox" ng-model="eachTask.done">
+            <span>{{eachTask.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTask()">
+        <input type="text" size="30" placeholder="add new todo here" 
+              ng-model="todoList.thisBoxInput">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Sixth Task - ends Here -->
+
+
+
+
+
+
+<!-- Seventh Task -  Highlight the text in red those that are done-->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+    <style>
+      .done-true{
+        color: red;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining [ archive ] </span>
+      <ul>
+        <li ng-repeat="eachTask in todoList.taskAndStatus">
+            <input type="checkbox" ng-model="eachTask.done">
+            <span class="done-{{eachTask.done}}">{{eachTask.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTask()">
+        <input type="text" size="30" placeholder="add new todo here" 
+              ng-model="todoList.thisBoxInput">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Seventh Task - ends Here -->
+
+
+
+
+
+
+
+
+<!-- Eighth Task -  Remove the tasks that we have completed using archive -->
+
+<!-- <!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+    <style>
+      .done-true{
+        color: red;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> 1 of 2 remaining 
+        [ <a href="" ng-click="todoList.deleteCompletedTask()">archive</a> ] </span>
+      <ul>
+        <li ng-repeat="eachTask in todoList.taskAndStatus">
+            <input type="checkbox" ng-model="eachTask.done">
+            <span class="done-{{eachTask.done}}">{{eachTask.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTask()">
+        <input type="text" size="30" placeholder="add new todo here" 
+              ng-model="todoList.thisBoxInput">
+        <input type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!-- Eighth Task - ends Here -->
+
+
+
+
+
+
+<!-- Nineth Task -  Display actual number of tasks -->
+
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="ToDo.js"></script>
+    <style>
+      .done-true{
+        color: red;
+        font-weight: bolder;
+      }
+      ul{
+        list-style: none;
+      }
+    </style>
+  </head>
+
+  <body >
+    <h2>Todo1</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span> {{todoList.countTask()}} of {{todoList.taskAndStatus.length}} remaining 
+        [ <a href="" ng-click="todoList.deleteCompletedTask()">archive</a> ] </span>
+      <ul>
+        <li ng-repeat="eachTask in todoList.taskAndStatus">
+            <input type="checkbox" ng-model="eachTask.done">
+            <span class="done-{{eachTask.done}}">{{eachTask.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTask()">
+        <input type="text" size="30" placeholder="add new todo here" 
+              ng-model="todoList.thisBoxInput">
+        <input type="submit" value="add">
       </form>
     </div>
   </body>
 </html>
+
+<!-- Nineth Task - ends Here -->
+
+
+
+<!--
+
+  Assignment: 
+
+  1. UX apply Bootstrap
+  2. Delete buttons after every task instead of archive
+  3. Ask the user for priority and color labels and sort the list on priority and add colors
+
+
+-->
+    

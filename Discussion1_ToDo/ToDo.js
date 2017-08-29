@@ -1,28 +1,92 @@
+//Second Task
+
+// angular.module('todoApp', [])
+// .controller('TodoListController', function() {
+//   var todoList=this;
+//   todoList.x = ["Some Task 1","Some Task 2"];
+ 
+// });
+
+//Third-Fourth-Fifth Task
+
+// angular.module('todoApp', [])
+// .controller('TodoListController', function() {
+//   var todoList = this;
+//   todoList.taskAndStatus = [
+//     {text:'Some Task 1', done:true},
+//     {text:'Some Task 2', done:false}
+//   ];
+// });
+
+//Sixth - Seventh Task
+
+// angular.module('todoApp', [])
+// .controller('TodoListController', function() {
+//   var todoList = this;
+//   todoList.taskAndStatus = [
+//     {text:'Some Task 1', done:true},
+//     {text:'Some Task 2', done:false}
+//   ];
+
+//   todoList.addTask =function(){
+//     todoList.taskAndStatus.push({text:todoList.thisBoxInput, done:false});
+//   };
+// });
+
+
+//Eighth Task
+
+// angular.module('todoApp', [])
+// .controller('TodoListController', function() {
+//   var todoList = this;
+//   todoList.taskAndStatus = [
+//     {text:'Some Task 1', done:true},
+//     {text:'Some Task 2', done:false}
+//   ];
+
+//   todoList.addTask =function(){
+//     todoList.taskAndStatus.push({text:todoList.thisBoxInput, done:false});
+//   };
+
+//   todoList.deleteCompletedTask=function(){
+//     var oldList=todoList.taskAndStatus;
+//     todoList.taskAndStatus=[];
+//     angular.forEach(oldList, function(obj) {
+//               if (!obj.done) todoList.taskAndStatus.push(obj);
+//             });
+//   };
+
+// });
+
+//Nineth Task
+
 angular.module('todoApp', [])
-  .controller('TodoListController', function() {
-    var todoList = this;
-    todoList.todos = [
-      {text:'learn AngularJS', done:true},
-      {text:'build an AngularJS app', done:false}];
+.controller('TodoListController', function() {
+  var todoList = this;
+  todoList.taskAndStatus = [
+    {text:'Some Task 1', done:true},
+    {text:'Some Task 2', done:false}
+  ];
+
+  todoList.addTask =function(){
+    todoList.taskAndStatus.push({text:todoList.thisBoxInput, done:false});
+  };
+
+  todoList.deleteCompletedTask=function(){
+    var oldList=todoList.taskAndStatus;
+    todoList.taskAndStatus=[];
+    angular.forEach(oldList, function(obj) {
+              if (!obj.done) todoList.taskAndStatus.push(obj);
+            });
+  };
+
+  todoList.countTask=function() {
+    var count = 0;
+    angular.forEach(todoList.taskAndStatus, function(obj) {
+      count += obj.done ? 0 : 1;
+    });
+    return count;
+  };
+
+});
  
-    todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
-      todoList.todoText = '';
-    };
- 
-    todoList.remaining = function() {
-      var count = 0;
-      angular.forEach(todoList.todos, function(todo) {
-        count += todo.done ? 0 : 1;
-      });
-      return count;
-    };
- 
-    todoList.archive = function() {
-      var oldTodos = todoList.todos;
-      todoList.todos = [];
-      angular.forEach(oldTodos, function(todo) {
-        if (!todo.done) todoList.todos.push(todo);
-      });
-    };
-  });
