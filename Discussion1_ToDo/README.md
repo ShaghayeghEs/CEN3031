@@ -30,3 +30,4 @@ If you want something more, try this to test your knowledge:
   3. Ask the user for priority and color labels and sort the list on priority and add colors
 
     
+![Image](https://github.com/kapooramanpreet/CEN3031/blob/master/Discussion1_ToDo/Discussion%20-1%20UX.PNG)
